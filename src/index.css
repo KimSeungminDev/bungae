@@ -574,36 +574,28 @@ button,
   background: rgb(255, 255, 255);
 }
 
-<!--배너 이미지-->
+/* 배너 슬라이더 스타일 */
 .banner-slider {
   width: 100%;
-  max-width: 1024px;
-  /* 배너 최대 너비 */
+  max-width: 1024px; /* 배너 최대 너비 */
   margin: 0 auto;
-  padding: 20px 0px;
+  padding: 20px 0;
   background-color: #ffffff;
   position: relative;
 }
 
+/* 배너 슬라이드 */
 .banner-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  /* 화살표를 이미지 위에 위치시키기 위해 필요 */
 }
 
-.banner-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
+/* 배너 이미지 */
 .banner-image img {
   width: 100%;
   max-width: 1024px;
-  /* 이미지 최대 너비 */
   height: auto;
   margin-top: 16px;
   border-radius: 8px;
@@ -613,44 +605,26 @@ button,
 .custom-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-50%); /* 중앙에 고정 */
   background: none;
-  /* 원형 배경 제거 */
-  color: #fff;
-  /* 화살표 색상 흰색 */
+  color: #cccccc;
   border: none;
-  font-size: 30px;
-  /* 화살표 크기 */
+  font-size: 40px;
   cursor: pointer;
   z-index: 2;
 }
 
+/* 왼쪽 화살표 */
 .custom-prev {
-  left: 220px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  color: #cccccc;
-  border: none;
-  font-size: 40px;
-  cursor: pointer;
-  z-index: 2;
+  left: 30px; /* 배너의 좌측에 고정 */
 }
 
+/* 오른쪽 화살표 */
 .custom-next {
-  right: 220px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  color: #cccccc;
-  border: none;
-  font-size: 40px;
-  cursor: pointer;
-  z-index: 2;
+  right: 10px; /* 배너의 우측에 고정 */
 }
 
+/* 하단 배너 */
 .under-banner-div {
   position: relative;
   margin: 16px auto 0px;
@@ -665,6 +639,7 @@ button,
   display: block;
   z-index: 0;
 }
+
 
 .main-list {
   display: block; /* 또는 inline-block */

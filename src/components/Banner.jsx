@@ -4,6 +4,9 @@ import Slider from 'react-slick';
 
 const Banner = () => {
   const settings = {
+    prevArrow: <CustomPrevArrow />, // 커스텀 왼쪽 화살표
+    nextArrow: <CustomNextArrow />, // 커스텀 오른쪽 화살표
+    dots: true,
     infinite: true, // 무한 반복
     speed: 500,
     slidesToShow: 1,
@@ -12,12 +15,10 @@ const Banner = () => {
     autoplaySpeed: 3000, // 자동 재생 속도 (밀리초)
     arrows: true, // 좌우 화살표 버튼 표시
     fade: true,
-    prevArrow: <CustomPrevArrow />, // 커스텀 왼쪽 화살표
-    nextArrow: <CustomNextArrow />, // 커스텀 오른쪽 화살표
   };
 
   return (
-    <div className="banner-slider" style={{backgroundColor:"white"}}>
+    <div className="banner-slider" style={{ backgroundColor: "white" }}>
       <Slider {...settings}>
         {/* 슬라이드 1 */}
         <div className="banner-slide">

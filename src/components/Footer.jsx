@@ -7,11 +7,11 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-div1">
         <div className="footer-top">
-          <a className="footer-top-a" href="#">회사소개</a>
-          <a className="footer-top-a" href="#">이용약관</a>
-          <a className="footer-top-a" href="#">운영정책</a>
-          <a href="#" className="active footer-top-a">개인정보처리방침</a>
-          <a className="footer-top-a" href="#">청소년보호정책</a>
+          <a className="footer-top-a" href="#">회사소개</a>|
+          <a className="footer-top-a" href="#">이용약관</a>|
+          <a className="footer-top-a" href="#">운영정책</a>|
+          <a href="#" className="active footer-top-a">개인정보처리방침</a>|
+          <a className="footer-top-a" href="#">청소년보호정책</a>|
           <a className="footer-top-a" href="#">광고제휴</a>
         </div>
       </div>
@@ -30,7 +30,7 @@ const Footer = () => {
           <p><strong>1670-2910</strong></p>
           <p>운영시간 9시 - 18시 (주말/공휴일 휴무, 점심시간 12시 - 13시)</p>
           <a href="#">공지사항</a> | <a href="#">1:1 문의하기</a> | <a href="#">자주 묻는 질문</a>
-          <h4>우리은행 채무지급보증 안내</h4>
+          <h4 style={{marginTop:"30px"}}>우리은행 채무지급보증 안내</h4>
           <p>번개장터(주)는 회사가 직접 판매하는 상품에 한하여, 고객님의 현금 결제 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.</p>
           <a href="#">서비스 가입사실 확인</a>
           <p>© Bungeajangter. Inc All rights reserved.</p>
