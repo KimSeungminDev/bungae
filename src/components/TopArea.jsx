@@ -76,10 +76,11 @@ const TopArea = () => {
               <img src="/번개톡.png" width={23} height={24} alt="번개톡버튼 이미지" />
               <span style={{ lineHeight: '36px', fontSize: '14px', color: '#000' }}>번개톡</span>
             </button>
-            <a className="header-other-a">
+            <Link to="/store" className="header-other-a">
               <img src="내상점.png" width={23} height={24} alt="내상점버튼 이미지" />
               <span style={{ lineHeight: '36px', fontSize: '14px', color: '#000' }}>내상점</span>
-            </a>
+            </Link>
+
             <a className="header-other-a">
               <img src="판매하기.png" width={23} height={24} alt="내상점버튼 이미지" />
               <span style={{ lineHeight: '36px', fontSize: '14px', color: '#000' }}>판매하기</span>

@@ -444,7 +444,7 @@ button,
   margin-right: 5px;
 }
 
-.header-info-logout {
+.header-info-loginout {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -577,7 +577,8 @@ button,
 /* 배너 슬라이더 스타일 */
 .banner-slider {
   width: 100%;
-  max-width: 1024px; /* 배너 최대 너비 */
+  max-width: 1024px;
+  /* 배너 최대 너비 */
   margin: 0 auto;
   padding: 20px 0;
   background-color: #ffffff;
@@ -605,7 +606,8 @@ button,
 .custom-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%) translateX(-50%); /* 중앙에 고정 */
+  transform: translateY(-50%) translateX(-50%);
+  /* 중앙에 고정 */
   background: none;
   color: #cccccc;
   border: none;
@@ -616,12 +618,14 @@ button,
 
 /* 왼쪽 화살표 */
 .custom-prev {
-  left: 30px; /* 배너의 좌측에 고정 */
+  left: 30px;
+  /* 배너의 좌측에 고정 */
 }
 
 /* 오른쪽 화살표 */
 .custom-next {
-  right: 10px; /* 배너의 우측에 고정 */
+  right: 10px;
+  /* 배너의 우측에 고정 */
 }
 
 /* 하단 배너 */
@@ -642,7 +646,8 @@ button,
 
 
 .main-list {
-  display: block; /* 또는 inline-block */
+  display: block;
+  /* 또는 inline-block */
   width: 1024px;
   margin: auto;
   padding: 3.5rem 0px 1.5rem;
@@ -660,9 +665,11 @@ button,
 
 /* 전체 카드 스타일 */
 .product-card {
-  width: 190px; /* 카드 너비 설정 */
+  width: 190px;
+  /* 카드 너비 설정 */
   border: 1px solid #e0e0e0;
-  border-radius: 0; /* 테두리를 각지게 설정 */
+  border-radius: 0;
+  /* 테두리를 각지게 설정 */
   overflow: hidden;
   margin: 6px;
   text-align: left;
@@ -678,7 +685,8 @@ button,
 
 /* 이미지 밑줄 */
 .product-image {
-  border-bottom: 1px solid #e0e0e0; /* 밑줄 추가 */
+  border-bottom: 1px solid #e0e0e0;
+  /* 밑줄 추가 */
 }
 
 /* 상품 정보 스타일 */
@@ -716,4 +724,330 @@ button,
 .product-date {
   font-size: 12px;
   color: #888;
+}
+
+
+
+/* 로그아웃 모달 오버레이 */
+.header-logout-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* 로그아웃 모달 박스 */
+.header-logout-modal {
+  background: white;
+  padding: 20px 30px;
+  width: 18.5rem;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 모달 제목 */
+.header-logout-modal h2 {
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* 모달 내용 */
+.header-logout-modal p {
+  white-space: pre-wrap;
+  word-break: keep-all;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+/* 로그아웃 모달 버튼 컨테이너 */
+.header-logout-modal-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+/* 취소 버튼 */
+.header-logout-cancel {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  width: 100px;
+  /* 버튼 너비 */
+  text-align: center;
+  box-shadow: none;
+}
+
+/* 확인 버튼 */
+.header-logout-confirm {
+  background: #d33;
+  border: 1px solid #d33;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  width: 100px;
+  /* 버튼 너비 */
+  text-align: center;
+  box-shadow: none;
+}
+
+
+.header-logout-cancel:hover {
+  background-color: #e0e0e0;
+}
+
+/* 확인 버튼 */
+.header-logout-confirm {
+  color: rgb(255, 255, 255);
+  background: rgb(216, 12, 24);
+  font-weight: bold;
+  margin-left: 0.5rem;
+  appearance: button;
+  height: 3rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.header-logout-confirm:hover {
+  background-color: #d32f2f;
+}
+
+/* 로그인 모달 오버레이 */
+.header-login-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.header-login-modal {
+  background: rgb(247, 247, 247);
+  width: 420px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 50px 0px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.login-modal {
+  padding-top: 40px;
+}
+
+.login-modal-logo {
+  display: block;
+  margin: auto auto 10px;
+}
+
+.login-modal-text1 {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.login-modal-text2 {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.login-modal-btns {
+  padding: 0px 70px;
+  font-size: 14px;
+}
+
+.login-modal-info {
+  padding: 3.5rem 2rem 1.5rem;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgb(153, 153, 153);
+}
+
+.login-modal-info p {
+  width: 100%;
+  border-top: 1px solid rgb(229, 229, 229);
+  padding-top: 1rem;
+}
+
+.login-modal-info a {
+  font-weight: normal;
+  text-decoration: underline;
+  color: rgb(102, 102, 102);
+}
+
+.login-modal-info b {
+  font-weight: normal;
+  color: rgb(102, 102, 102);
+}
+
+.login-modal-kakao {
+  width: 100%;
+  height: 38px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 7px 0px;
+  background: rgb(255, 255, 255);
+  /* 기본 흰색 배경 */
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  /* 부드러운 전환 효과 */
+}
+
+.login-modal-kakao:hover {
+  background-color: rgba(58, 29, 0, 0.5);
+  /* 카카오 갈색 연한 배경 */
+  color: white;
+  /* 텍스트 흰색으로 변경 */
+  box-shadow: rgba(58, 29, 0, 0.3) 0px 4px 12px;
+  /* 갈색 그림자 */
+}
+
+.login-modal-naver {
+  width: 100%;
+  height: 38px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 7px 0px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  /* 부드러운 전환 효과 */
+}
+
+.login-modal-naver:hover {
+  background-color: rgba(3, 199, 90, 0.5);
+  /* 네이버 초록색을 50% 투명도로 연하게 */
+  color: white;
+  /* 텍스트를 흰색으로 */
+  box-shadow: rgba(3, 199, 90, 0.3) 0px 4px 12px;
+  /* 초록색 그림자 추가 */
+}
+
+
+.login-modal-facebook {
+  width: 100%;
+  height: 38px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 7px 0px;
+  background: rgb(255, 255, 255);
+  /* 기본 흰색 배경 */
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  /* 부드러운 전환 효과 */
+}
+
+.login-modal-facebook:hover {
+  background-color: rgba(24, 119, 242, 0.5);
+  /* Facebook 파란색 연한 배경 */
+  color: white;
+  /* 텍스트 흰색으로 변경 */
+  box-shadow: rgba(24, 119, 242, 0.3) 0px 4px 12px;
+  /* 파란색 그림자 */
+}
+
+.btn-kakao {
+  background-image: url(/카카오.png);
+  position: absolute;
+  top: calc(50% - 12px);
+  left: 35px;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 12px;
+}
+
+.btn-facebook {
+  background-image: url(/페이스북.png);
+  position: absolute;
+  top: calc(50% - 12px);
+  left: 35px;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btn-naver {
+  background-image: url(/네이버.png);
+  position: absolute;
+  top: calc(50% - 12px);
+  left: 35px;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-modal-join {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 38px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 7px 0px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease; /* 부드러운 전환 */
+}
+
+.login-modal-join:hover {
+  background-color: #3a3a3a; /* 연한 회색 배경 */
+  color: #fff; /* 텍스트 흰색 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* 텍스트 그림자 */
+}
+
+.login-modal-join:last-child {
+  margin-bottom: 0px;
+}
+
+.btn-join{
+  background-image: url(/폰.svg);
+  background-size: 1rem 1rem;
+  background-position: center center;
+  position: absolute;
+  top: calc(50% - 12px);
+  left: 35px;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

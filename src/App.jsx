@@ -7,6 +7,8 @@ import Main from './components/Main';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Footer from './components/Footer';
+import Store from './components/Store';
+import Products from './components/Products';
 
 const App = () => {
 
@@ -17,6 +19,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main/>} />
         <Route path="/example" element={<ExampleComponent />} />
+        <Route path='/store' element={<Store />} />
+        <Route path='/products' element={<Products />} />
       </Routes>
       <Footer/>
     </Router>

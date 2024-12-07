@@ -1,32 +1,60 @@
-// src/components/HeaderInfo.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const HeaderInfo = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 여부 상태
   const [isAlramVisible, setIsAlramVisible] = useState(false);
   const [isShopMenuVisible, setIsShopMenuVisible] = useState(false);
+  const [isLogoutModalVisible, setIsLogoutModalVisible] = useState(false);
+  const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
 
   const handleMouseEnterAlram = () => {
     setIsAlramVisible(true);
-    console.log("알림 메뉴 활성화");
   };
 
   const handleMouseLeaveAlram = () => {
     setIsAlramVisible(false);
-    console.log("알림 메뉴 비활성화");
   };
 
   const handleMouseEnterShop = () => {
     setIsShopMenuVisible(true);
-    console.log("내 상점 메뉴 활성화");
   };
 
   const handleMouseLeaveShop = () => {
     setIsShopMenuVisible(false);
-    console.log("내 상점 메뉴 비활성화");
   };
 
   const handleBookmark = () => {
     alert("브라우저에서 이 페이지를 즐겨찾기에 추가하려면 Ctrl + D 또는 Cmd + D를 누르세요.");
+  };
+
+  const handleLogoutClick = () => {
+    setIsLogoutModalVisible(true);
+  };
+
+  const handleCloseModal = (event) => {
+    if (event.target.className.includes('header-logout-modal-overlay')) {
+      setIsLogoutModalVisible(false);
+      setIsLoginModalVisible(false);
+    }
+  };
+
+  const handleConfirmLogout = () => {
+    setIsLogoutModalVisible(false);
+    console.log("로그아웃 실행");
+    setIsLoggedIn(false); // 로그아웃 시 로그인 상태를 false로 변경
+    // 실제 로그아웃 로직 추가
+  };
+
+  const handleLoginClick = () => {
+    setIsLoginModalVisible(true);
+  };
+
+  const handleConfirmLogin = () => {
+    setIsLoginModalVisible(false);
+    console.log("로그인 실행");
+    setIsLoggedIn(true); // 로그인 성공 시 상태 변경
+    // 실제 로그인 로직 추가
   };
 
   return (
@@ -43,7 +71,15 @@ const HeaderInfo = () => {
           </button>
         </div>
         <div className="header-info-right">
-          <button className="header-info-logout">로그아웃</button>
+          {isLoggedIn ? (
+            <button className="header-info-loginout" onClick={handleLogoutClick}>
+              로그아웃
+            </button>
+          ) : (
+            <button className="header-info-loginout" onClick={handleLoginClick}>
+              로그인/회원가입
+            </button>
+          )}
 
           {/* 알림 메뉴 */}
           <div
@@ -69,7 +105,9 @@ const HeaderInfo = () => {
             onMouseLeave={handleMouseLeaveShop}
           >
             <div className="header-info-r_menu-in">
-              <a className="header-info-r_menu-text">내 상점</a>
+              <Link to="/store" className="header-info-r_menu-text">
+                내 상점
+              </Link>
               <div className={isShopMenuVisible ? 'header-info-menu-div-on' : 'header-info-menu-div-off'}>
                 <a className="header-info-menu-a" href="/shop/84105621/products">내 상품</a>
                 <a className="header-info-menu-a" href="/shop/84105621/favorites">찜한상품</a>
@@ -79,6 +117,68 @@ const HeaderInfo = () => {
           </div>
         </div>
       </div>
+
+      {/* 로그아웃 모달 */}
+      {isLogoutModalVisible && (
+        <div className="header-logout-modal-overlay" onClick={handleCloseModal}>
+          <div className="header-logout-modal">
+            <h2>로그아웃</h2>
+            <p>로그아웃 하시겠습니까?</p>
+            <div className="header-logout-modal-buttons">
+              <button className="header-logout-confirm" onClick={handleConfirmLogout}>
+                확인
+              </button>
+              <button className="header-logout-cancel" onClick={() => setIsLogoutModalVisible(false)}>
+                취소
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 로그인 모달 */}
+      {isLoginModalVisible && (
+        <div className="header-login-modal-overlay" onClick={handleCloseModal}>
+          <div className="header-login-modal">
+            <button className='modal-close'>
+              <img src="/닫기버튼.png" width="24" height="24" alt="로그인 모달 닫기 버튼 아이콘" />
+            </button>
+            <div className='login-modal'>
+              <img src="/조금더큰로고.svg" width="30" height="34" className="login-modal-logo" onClick={handleCloseModal} />
+              <div className="login-modal-text1">번개장터로 중고거래 시작하기</div>
+              <div className="login-modal-text2">간편하게 가입하고 상품을 확인하세요</div>
+              <div className='login-modal-btns'>
+                <button className='login-modal-kakao'>
+                  <div className='btn-kakao'></div>
+                  카카오로 이용하기
+                </button>
+                <button className='login-modal-facebook'>
+                <div className='btn-facebook'></div>
+                페이스북으로 이용하기
+                </button>
+                <button className='login-modal-naver'>
+                <div className='btn-naver'></div>
+                네이버로 이용하기
+                </button>
+                <a className='login-modal-join'>
+                <div className='btn-join'></div>
+                본인인증으로 이용하기
+                </a>
+              </div>
+              <div className='login-modal-info'>
+                <p>
+                  도움이 필요하면&nbsp;
+                  <a href="mailto:help@bunjang.co.kr">이메일</a>
+                  &nbsp;또는 고객센터
+                  <b>1670-2910</b>로 문의 바랍니다.
+                  <br />
+                  고객센터 운영시간: 09~18시 (점심시간 12~13시, 주말/공휴일 제외)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
